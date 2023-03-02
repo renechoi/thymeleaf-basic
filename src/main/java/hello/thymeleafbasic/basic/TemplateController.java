@@ -1,13 +1,20 @@
 package hello.thymeleafbasic.basic;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("template")
+@Controller
+@RequestMapping("/template")
 public class TemplateController {
 
-    @GetMapping("/fragment")
+    @GetMapping("fragment")
     public String template(){
-        return "template/fragment/framentMain";
+        return "template/fragment/fragmentMain";
+    }
+
+    @GetMapping("layout")
+    public String layout(){
+        return "template/layout/layoutMain";
     }
 }
